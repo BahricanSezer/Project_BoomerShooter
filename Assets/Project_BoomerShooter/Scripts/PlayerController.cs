@@ -37,7 +37,7 @@ namespace BoomerShooter.Player
         {
             if (_camera != null && _input != null)
             {
-                _camera.ProcessLook(_input.LookInput);
+                _camera.ProcessLook(_input.LookInput, _input.MoveInput);
             }
         }
     }
