@@ -2,7 +2,7 @@ using BoomerShooter.Gameplay;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.SceneManagement;
+using System.Collections;
 
 namespace BoomerShooter.Player
 {
@@ -23,8 +23,8 @@ namespace BoomerShooter.Player
         private float _currentHealth;
         private PlayerAudio _playerAudio;
         private bool _isDead = false;
-        private float _healEffectTimer;
         private float _damageFlashTimer;
+        private Coroutine _healCoroutine;
 
         public float CurrentHealth => _currentHealth;
         public float MaxHealth => maxHealth;
@@ -46,12 +46,6 @@ namespace BoomerShooter.Player
         private void Update()
         {
             HandleDynamicDamageVolume();
-
-            if (healVolume != null && healVolume.weight > 0f)
-            {
-                _healEffectTimer -= Time.deltaTime;
-                if (_healEffectTimer <= 0f) healVolume.weight = 0f;
-            }
         }
 
         private void HandleDynamicDamageVolume()
@@ -112,11 +106,18 @@ namespace BoomerShooter.Player
 
             if (healVolume != null)
             {
-                healVolume.weight = 1f;
-                _healEffectTimer = healEffectDuration;
+                if (_healCoroutine != null) StopCoroutine(_healCoroutine);
+                _healCoroutine = StartCoroutine(HealFlashRoutine());
             }
 
             if (_playerAudio != null) _playerAudio.PlayHeal();
+        }
+
+        private IEnumerator HealFlashRoutine()
+        {
+            healVolume.weight = 1f;
+            yield return new WaitForSeconds(healEffectDuration);
+            healVolume.weight = 0f;
         }
 
         private void UpdateHealthUI()
