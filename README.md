@@ -1,4 +1,4 @@
-The Velocitas - Oyun Mekaniği ve Bölüm Tasarımı Final Projesi
+The Velocitas - Oyun için Kod Yazımı II Final Projesi
 Bu proje, Oyun için Kod Yazımı II dersi final ödevi kapsamında Unity 6 (ProBuilder) kullanılarak geliştirilmiş, hızlı tempoya dayalı (fast-paced) bir Boomer Shooter / Parkur FPS prototipidir. Oyunda amaç, yüksek mobilite mekaniklerini kullanarak engelleri aşmak, düşmanları temizlemek ve bölüm sonundaki portala ulaşmaktır.
 
 1. Oyunun Temel Fikri
