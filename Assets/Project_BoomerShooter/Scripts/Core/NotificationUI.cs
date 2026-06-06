@@ -26,18 +26,15 @@ namespace BoomerShooter.UI
         private void Update()
         {
             _timer -= Time.deltaTime;
-
-            // Yazýyý yukarý doðru süzme (UI koordinatlarýnda)
+        
             transform.Translate(Vector3.up * _speed * Time.deltaTime);
-
-            // Zaman geçtikçe pürüzsüzce þeffaflaþtýrma (Fade Out)
+         
             if (_textMesh != null)
             {
-                float alpha = Mathf.Clamp01(_timer / (_lifetime * 0.4f)); // Son %40'lýk sürede þeffaflaþmaya baþlar
+                float alpha = Mathf.Clamp01(_timer / (_lifetime * 0.4f)); 
                 _textMesh.color = new Color(_startColor.r, _startColor.g, _startColor.b, alpha);
             }
 
-            // Süre bittiyse kendini yok et
             if (_timer <= 0)
             {
                 Destroy(gameObject);

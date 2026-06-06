@@ -7,12 +7,11 @@ namespace BoomerShooter.UI
         public static NotificationManager Instance { get; private set; }
 
         [Header("References")]
-        [SerializeField] private GameObject notificationPrefab; // Üretilecek text prefabi
-        [SerializeField] private Transform notificationContainer; // Sað alttaki boþ kutu (Konteyner)
+        [SerializeField] private GameObject notificationPrefab; 
+        [SerializeField] private Transform notificationContainer; 
 
         private void Awake()
         {
-            // Singleton Yapýsý
             if (Instance == null) Instance = this;
             else Destroy(gameObject);
         }
@@ -21,7 +20,6 @@ namespace BoomerShooter.UI
         {
             if (notificationPrefab == null || notificationContainer == null) return;
 
-            // Bildirim textini oluþtur ve konteynerýn içine çocuk olarak at
             GameObject newNotif = Instantiate(notificationPrefab, notificationContainer);
 
             NotificationUI notifScript = newNotif.GetComponent<NotificationUI>();

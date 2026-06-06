@@ -1,14 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using BoomerShooter.Interfaces;
-using BoomerShooter.Weapons; // Ekledik
+using BoomerShooter.Weapons; 
 
 namespace BoomerShooter.Input
 {
     public class InputReader : MonoBehaviour, IInputReader
     {
         private PlayerInputActions _inputActions;
-        private WeaponManager _weaponManager; // Ekledik
+        private WeaponManager _weaponManager; 
 
         public Vector2 MoveInput { get; private set; }
         public Vector2 LookInput { get; private set; }
@@ -37,7 +37,7 @@ namespace BoomerShooter.Input
 
             _inputActions.Player.Crouch.performed += ctx => IsCrouchPressed = true;
 
-            // ÇAKIÞMAYI ÖNLEYEN DOÐRUDAN TETÝKLEME
+            
             _inputActions.Player.Fire.performed += ctx => {
                 IsFirePressed = true;
                 IsFireHeld = true;
