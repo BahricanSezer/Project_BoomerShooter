@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Project_BoomerShooter/Scenes/Prototype_Level.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Project_BoomerShooter/Scenes/MainMenu_Level.unity
+    guid: 48b2fe27b0113ad41ae192777ebb4ac8
+  - enabled: 1
+    path: Assets/Project_BoomerShooter/Scenes/Game_Level.unity
+    guid: c348f441c1453ad48aa66834e2169afd
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

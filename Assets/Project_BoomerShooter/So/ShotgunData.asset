@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6db99a4e122b33e4c8c1f70ecca9835a, type: 3}
+  m_Name: ShotgunData
+  m_EditorClassIdentifier: Assembly-CSharp::BoomerShooter.Weapons.WeaponData
+  weaponType: 1
+  ammoType: 1
+  weaponName: 
+  fireRate: 0.8
+  damage: 10
+  range: 80
+  isPelletType: 1
+  pelletCount: 20
+  spreadAngle: 10
+  muzzleFlashPrefab: {fileID: 0}
